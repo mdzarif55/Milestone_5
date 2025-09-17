@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border:2px solid red;
+            margin: 2px;
+        }
+        section{
+            border:2px solid red;
+            margin: 2px;
+        }
+        ol{
+            border:2px solid red;
+            margin: 2px;
+        }
+        li{
+            border:2px solid purple;
+            margin: 2px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Explore Bubble</h1>
+    <section id="section">
+        <h3>List Of Things</h3>
+        <ol id="item-list">
+            <li id="items-1">Lorem, ipsum.</li>
+            <li id="items-2">Eos, sint!</li>
+            <li id="items-3">Aliquam, excepturi.</li>
+            <li id="items-4">Maiores, officia?</li>
+            <li id="items-5">Repellat, earum?</li>
+            <li id="items-6">Eum, doloribus!</li>
+        </ol>
+    </section>
+    <script>
+        //list item handler
+        document.getElementById('items-2').addEventListener('click',function(){
+            console.log("item-2 Clicked");
+        })
+        //ol item handler
+        document.getElementById('item-list').addEventListener('click',function(){
+            console.log("ol Clicked");
+        })
+        //section item handler
+        document.getElementById('section').addEventListener('click',function(){
+            console.log("section Clicked");
+        })
+    </script>
+</body>
+
+</html>
