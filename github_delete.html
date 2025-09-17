@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.3s;
+      width: 250px;
+      text-align: center;
+    }
+
+    input:focus {
+      border-color: #007bff;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: not-allowed;
+      background: #ccc;
+      color: white;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:enabled {
+      background: #e63946;
+      cursor: pointer;
+    }
+
+    button:enabled:hover {
+      background: #c53030;
+      transform: scale(1.05);
+    }
+
+    button:enabled:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Secret Info</h1>
+  <input placeholder="Write Delete" id="input">
+  <button disabled id="btn-dlt">Delete</button>
+
+  <script>
+    document.getElementById('input').addEventListener('keyup', function (event) {
+      const text = event.target.value.toLowerCase();
+      const btnDelete = document.getElementById('btn-dlt');
+
+      if (text === 'delete') {
+        console.log('Correct');
+        btnDelete.removeAttribute('disabled');
+      } else {
+        console.log('False');
+        btnDelete.setAttribute('disabled', true);
+      }
+    });
+  </script>
+</body>
+
+</html>
